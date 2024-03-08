@@ -1,0 +1,22 @@
+.chatContainer {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+.chatContent {
+    display: flex;
+    flex-direction: column;
+    width: 75%;
+    height: 100%;
+}
+
+.chatList {
+    height: 0;
+    flex: 1;
+}
+
+.chatInput {
+    padding: 16px;
+}

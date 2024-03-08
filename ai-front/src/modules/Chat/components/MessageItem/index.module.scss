@@ -1,0 +1,85 @@
+.messageItem {
+    display: flex;
+    align-items: flex-start;
+    margin: 12px 0;
+}
+
+.messageContent {
+    max-width: 70%;
+    min-width: 1em;
+    min-height: 1em;
+    background: #ffffff;
+    border-radius: 0 8px 8px;
+    box-shadow: 0 1px 3px #0000001a, 0 1px 2px #0000000f;
+    padding: 12px;
+    word-break: break-all;
+}
+
+.avatar {
+    border: 1px solid #e8e9eb;
+}
+
+@keyframes blink {
+    0% {
+        content: '|';
+    }
+
+    1% {
+        content: '_';
+    }
+}
+
+:global {
+    .hl-code {
+        position: relative;
+        background-color: #f6f8fa;
+        padding: 16px;
+        margin-bottom: 16px;
+        overflow: auto;
+
+        .hljs {
+            background-color: transparent;
+        }
+    }
+
+    .hl-code:hover {
+        .markdown-it-code-copy-btn {
+            visibility: visible;
+            opacity: 1;
+        }
+    }
+
+    .input-cursor::after {
+        content: '|';
+
+        &:local {
+            animation: blink infinite 0.5s;
+        }
+    }
+
+    .markdown-it-code-copy-btn {
+        position: absolute;
+        top: 0.4em;
+        right: 0.4em;
+        z-index: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 32px;
+        height: 24px;
+        padding: 0;
+        color: #ddd;
+        font-size: 14px;
+        background-color: #666;
+        border: none;
+        border-radius: 6px;
+        outline: none;
+        box-shadow: 0 2px #0003;
+        visibility: hidden;
+        cursor: pointer;
+        opacity: 0;
+        transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+        -webkit-user-select: none;
+        user-select: none;
+    }
+}
